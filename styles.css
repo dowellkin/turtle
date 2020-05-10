@@ -1,0 +1,52 @@
+html {
+	box-sizing: border-box;
+	font-family: Tahoma;
+}
+
+*, *::before, *::after{
+	box-sizing: inherit;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding-top: 20px;
+	background-color: rgb(247, 249, 250);
+	height: 100%;
+}
+
+.elem{
+	height: 435px;
+	width: 400px;
+	margin: 0 25px 40px;
+}
+
+textarea {
+	resize: none;
+	width: 400px;
+	height: 400px;
+}
+
+.title__canvas{
+	display: flex;
+	justify-content: space-between;
+}
+
+.title{
+	margin-bottom: 10px;
+}
+
+canvas{
+	box-sizing: border-box;
+	border: 1px solid #ff4d4d;
+	background-color: #fff;
+}

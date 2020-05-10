@@ -3,23 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
 	<title>turtle</title>
 </head>
 <body>
 	<div class="wrapper">
-		<div class="canvas--wrapper">
-			<div class="title">
+		<div class="elem canvas">
+			<div class="title title__canvas">
 				<div class="canvas--title">Canvas</div>
 				<div class="canvas--coord">X: <span class="X">0</span> Y: <span class="Y">0</span></div>
 			</div>
 			<canvas class="canvas" width=400 height="400"></canvas>
 		</div>
 
-		<div class="text-aria--wrapper">
+		<div class="elem text-aria">
 			<div class="title">
 				<div class="text-aria--title">Input</div>
 			</div>
-			<textarea name="input" id="input" cols="30" rows="10"></textarea>
+			<textarea name="input" id="input" cols="50" rows="20"></textarea>
 		</div>
 	</div>
 </body>
