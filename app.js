@@ -14,3 +14,7 @@ trtl.showCoordinates(document.querySelector(".X"), document.querySelector(".Y"))
 // trtl.right(45);
 // trtl.forward(50);
 // trtl.drawTurtle();
+
+function help() {
+	console.log('В данной демонтрации реализованы такие команды как: "Вперед", "Влево", "Вправо", "Сетка". Пример команды "вперед50"');
+}
