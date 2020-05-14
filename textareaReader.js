@@ -54,7 +54,7 @@ class TextareaReader{
 		*/
 		const reg = /\D+\(+.*\)|\D+\d+/gi;
 		let commands = string.match(reg);
-		console.log(commands);
+		// console.log(commands);
 		return commands;
 	}
 

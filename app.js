@@ -16,5 +16,11 @@ trtl.showCoordinates(document.querySelector(".X"), document.querySelector(".Y"))
 // trtl.drawTurtle();
 
 function help() {
-	console.log('В данной демонтрации реализованы такие команды как: "Вперед", "Влево", "Вправо", "Сетка". Пример команды "вперед50"');
+	console.log("Простая интерпритация turtle на чистом js. Используются следующие команды:");
+	for(let key in textarea.commands){
+		console.log(`\t${key}: ${textarea.commands[key].join(", ")}`);
+	}
+	console.log("Пока что циклы работают странно (можно осуществить вложенные циклы, но не два цикла на одном уровне");
+	console.log("По всем вопросам обращаться https://vk.com/kun_alex");
+	console.log("Королёв Александр (С) 2020");
 }
