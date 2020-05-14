@@ -31,6 +31,7 @@ class Turtle {
 	}
 Z
 	drawGrid(gridSize = this.gridSize) {
+		if(gridSize == 0) return;
 		const savedLineWidth = this.ctx.lineWidth;
 		const savedStrokeStyle = this.ctx.strokeStyle;
 		const savedFillStyle = this.ctx.fillStyle;
@@ -38,11 +39,13 @@ Z
 		this.ctx.lineWidth = 1;
 		this.ctx.strokeStyle = "#ebebeb";
 
-		for (let y = 1; y * gridSize < this.canvas.height; y++) {
-			this.innerDrawLine(0, y * gridSize, this.canvas.width, y * gridSize);
+		for (let y = 0; y * gridSize < this.canvas.height/2; y++) {
+			this.innerDrawLine(0, this.changeSystemY(y * gridSize), this.canvas.width, this.changeSystemY(y * gridSize));
+			this.innerDrawLine(0, this.changeSystemY(-y * gridSize), this.canvas.width, this.changeSystemY(-y * gridSize));
 		}
-		for (let x = 1; x * gridSize < this.canvas.width; x++) {
-			this.innerDrawLine(x * gridSize, 0, x * gridSize, this.canvas.height);
+		for (let x = 0; x * gridSize < this.canvas.width/2; x++) {
+			this.innerDrawLine(this.changeSystemX(x * gridSize), 0, this.changeSystemX(x * gridSize), this.canvas.height);
+			this.innerDrawLine(this.changeSystemX(-x * gridSize), 0, this.changeSystemX(-x * gridSize), this.canvas.height);
 		}
 
 		this.ctx.lineWidth = savedLineWidth;
@@ -51,10 +54,17 @@ Z
 	}
 
 	drawCooridnatesLines() {
+		const savedLineWidth = this.ctx.lineWidth;
+		const savedStrokeStyle = this.ctx.strokeStyle;
+		const savedFillStyle = this.ctx.fillStyle;
 		this.ctx.lineWidth = 1;
 		this.ctx.strokeStyle = "#000";
 		this.innerDrawLine(this.canvas.width / 2, 0, this.canvas.width / 2, this.canvas.height);
 		this.innerDrawLine(0, this.canvas.height / 2, this.canvas.width, this.canvas.height / 2);
+
+		this.ctx.lineWidth = savedLineWidth;
+		this.ctx.strokeStyle = savedStrokeStyle;
+		this.ctx.fillStyle = savedFillStyle;
 	}
 
 	drawTurtle() {
@@ -108,6 +118,7 @@ Z
 		this.ctx.fillStyle = "#000";
 		// this.drawGrid();
 		// this.drawCooridnatesLines();
+		////console.log("~~cleared")
 	}
 
 	changeSystemX(X) {
@@ -142,14 +153,17 @@ Z
 				y2: newCoords.y
 			}
 		})
+		//console.log("~~~ forward");
 	}
 
 	left(deg) {
 		this.turtle.angle += deg;
+		//console.log("~~~ left");
 	}
 
 	right(deg) {
 		this.turtle.angle -= deg;
+		//console.log("~~~ right");
 	}
 
 	color(color) {
@@ -172,4 +186,5 @@ Z
 	penDown(){
 		this.isPenDown = true;
 	}
+
 }
